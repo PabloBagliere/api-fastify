@@ -8,11 +8,11 @@ function build(
   opts: FastifyServerOptions = {},
 ): FastifyInstance<Server, IncomingMessage, ServerResponse> {
   const app: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify(opts);
-  app.register(autoLoad, {
-    dir: join(__dirname, 'plugins'),
-    ignorePattern: /.*(test|spec).ts/,
-    options: Object.assign({}, opts),
-  });
+  // app.register(autoLoad, {
+  //   dir: join(__dirname, 'plugins'),
+  //   ignorePattern: /.*(test|spec).ts/,
+  //   options: Object.assign({}, opts),
+  // });
 
   app.register(autoLoad, {
     dir: join(__dirname, 'routes'),
